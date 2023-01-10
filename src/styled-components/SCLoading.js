@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SCLoading = styled.div`
-
 .sk-chase {
     width: 40px;
     height: 40px;

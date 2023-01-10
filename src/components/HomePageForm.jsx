@@ -6,6 +6,7 @@ import { createFormData } from "../service";
 import { SCHomePageForm } from "../styled-components";
 import { validationForm } from "../utils";
 import HomePageInput from "./HomePageInput";
+import Loading from "./Loading";
 import Snackbar from "./Snackbar";
 
 let initialForm = {
@@ -24,14 +25,19 @@ const HomePageForm = () => {
 
   const [submitBool, setSubmitBool] = useState(false);
 
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    createFormData(form);
-    resetForm();
+    setLoading(true);
+    const data = await createFormData(form);
     setSubmitBool(true);
+    setLoading(false);
+    resetForm();
   };
   return (
     <SCHomePageForm onSubmit={handleSubmit}>
+      {loading && <Loading />}
       {data.items.map((input, index) => (
         <HomePageInput
           key={index}

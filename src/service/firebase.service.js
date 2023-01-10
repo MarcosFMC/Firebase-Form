@@ -9,7 +9,7 @@ export const getAllFormData = async () =>   {
 }
 
 export const createFormData = async (form) => {
-    addDoc(collection(db, "form"), { ...form });
+    return addDoc(collection(db, "form"), { ...form });
 }
 
 

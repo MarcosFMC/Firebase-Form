@@ -7,7 +7,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/Firebase-Form" element={<HomePage />} />
+        <Route path="/Firebase-Form/" element={<HomePage />} />
         <Route path="/info" element={<InfoPage />} />
       </Routes>
     </div>
