@@ -5,3 +5,4 @@ export { default as HomePageInput } from './HomePageInput';
 export { default as InfoPage } from './InfoPage';
 export { default as InfoPageCard } from './InfoPageCard';
 export { default as Loading } from './Loading';
+export { default as Snackbar } from './Snackbar';

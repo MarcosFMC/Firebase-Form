@@ -1,5 +1,10 @@
 import React from "react";
-import { SCInfoPageCard } from "../styled-components";
+import {
+  InfoPageCardH2,
+  InfoPageCardLabel,
+  InfoPageCardSpan,
+  SCInfoPageCard,
+} from "../styled-components";
 
 const InfoPageCard = ({
   full_name,
@@ -10,15 +15,17 @@ const InfoPageCard = ({
 }) => {
   return (
     <SCInfoPageCard>
-      <h2>{full_name}</h2>
-      <label>Email:</label>
-      <span>{email}</span>
-      <label>Fecha de cumpleaños:</label>
-      <span>{birth_date}</span>
-      <label>Pais de origen:</label>
-      <span>{country_of_origin}</span>
-      <label>Terminos y condiciones:</label>
-      <span>{terms_and_conditions ? "Aceptados" : "No aceptados"}</span>
+      <InfoPageCardH2>{full_name}</InfoPageCardH2>
+      <InfoPageCardLabel>Email:</InfoPageCardLabel>
+      <InfoPageCardSpan>{email}</InfoPageCardSpan>
+      <InfoPageCardLabel>Fecha de cumpleaños:</InfoPageCardLabel>
+      <InfoPageCardSpan>{birth_date}</InfoPageCardSpan>
+      <InfoPageCardLabel>Pais de origen:</InfoPageCardLabel>
+      <InfoPageCardSpan>{country_of_origin}</InfoPageCardSpan>
+      <InfoPageCardLabel>Terminos y condiciones:</InfoPageCardLabel>
+      <InfoPageCardSpan>
+        {terms_and_conditions ? "Aceptados" : "No aceptados"}
+      </InfoPageCardSpan>
     </SCInfoPageCard>
   );
 };

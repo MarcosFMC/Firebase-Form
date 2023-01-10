@@ -1,5 +1,12 @@
 import React from "react";
-import { SCHomePageInput } from "../styled-components";
+import {
+  HomePageCheckboxInput,
+  HomePageLabel,
+  HomePageCustomInput,
+  HomePageSelect,
+  HomePageSubmitInput,
+  HomePageValidationError,
+} from "../styled-components/";
 
 const HomePageInput = ({
   type,
@@ -17,8 +24,8 @@ const HomePageInput = ({
       case "select":
         return (
           <>
-            <label>{label}</label>
-            <select
+            <HomePageLabel>{label}</HomePageLabel>
+            <HomePageSelect
               type={type}
               name={name}
               onChange={handleChange}
@@ -34,50 +41,54 @@ const HomePageInput = ({
                   required={required}
                 />
               ))}
-            </select>
-            {errors[name] && <span>{errors[name]}</span>}
+            </HomePageSelect>
+            {errors[name] && (
+              <HomePageValidationError>{errors[name]}</HomePageValidationError>
+            )}
           </>
         );
       case "checkbox":
         return (
           <>
-            <label>{label}</label>
-            <input
+            <HomePageLabel>{label}</HomePageLabel>
+            <HomePageCheckboxInput
               required={required}
               type={type}
               name={name}
               onChange={handleChange}
               onBlur={handleBlur}
               checked={form[name]}
-            ></input>
-            {errors[name] && <span>{errors[name]}</span>}
+            ></HomePageCheckboxInput>
+            {errors[name] && (
+              <HomePageValidationError>{errors[name]}</HomePageValidationError>
+            )}
           </>
         );
       case "submit":
         return (
-          <>
-            <input type={type} value={label}></input>
-          </>
+          <HomePageSubmitInput type={type} value={label}></HomePageSubmitInput>
         );
       default:
         return (
           <>
-            <label>{label}</label>
-            <input
+            <HomePageLabel>{label}</HomePageLabel>
+            <HomePageCustomInput
               required={required}
               type={type}
               name={name}
               onChange={handleChange}
               onBlur={handleBlur}
               value={form[name]}
-            ></input>
-            {errors[name] && <span>{errors[name]}</span>}
+            ></HomePageCustomInput>
+            {errors[name] && (
+              <HomePageValidationError>{errors[name]}</HomePageValidationError>
+            )}
           </>
         );
     }
   };
 
-  return <SCHomePageInput>{renderInputs()}</SCHomePageInput>;
+  return <>{renderInputs()}</>;
 };
 
 export default HomePageInput;

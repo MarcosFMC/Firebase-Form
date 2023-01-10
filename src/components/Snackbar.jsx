@@ -1,10 +1,10 @@
 import React from "react";
-import { SCSnackbar } from "../styled-components";
+import { SCSnackbar, SnackbarMessage } from "../styled-components";
 
 const Snackbar = ({ message, children, danger }) => {
   return (
     <SCSnackbar className={danger == true ? "danger" : undefined}>
-      <span>{message}</span>
+      <SnackbarMessage>{message}</SnackbarMessage>
       {children}
     </SCSnackbar>
   );

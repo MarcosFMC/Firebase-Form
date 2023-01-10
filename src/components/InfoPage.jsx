@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllFormData } from "../service";
-import { SCInfoPage } from "../styled-components";
+import { InfoPageH2, SCInfoPage } from "../styled-components";
 import InfoPageCard from "./InfoPageCard";
 import Loading from "./Loading";
 
@@ -22,7 +22,7 @@ const InfoPage = () => {
 
   return (
     <SCInfoPage>
-      <h2>Datos recibidos del formulario</h2>
+      <InfoPageH2>Datos recibidos del formulario</InfoPageH2>
       {data.length == 0 ? <Loading /> : null}
       {data.map((form, index) => (
         <InfoPageCard key={index} {...form} />
