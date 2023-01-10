@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <SCErrorPage>
       <h2>Error 404: Not found</h2>
       <Snackbar message="Ruta no encontrada" danger={true}>
-        <Link className="router-link" to="/">
+        <Link className="router-link" to="/Firebase-form">
           Click para ir a una ruta valida
         </Link>
       </Snackbar>

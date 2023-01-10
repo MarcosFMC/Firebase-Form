@@ -7,7 +7,7 @@
     "predeploy":"npm run build",
     "deploy":"gh-pages -d dist",
     "dev": "vite",
-    "build": "vite build --base=/form/",
+    "build": "vite build --base=/Firebase-Form/",
     "preview": "vite preview"
   },
   "dependencies": {
